@@ -25,6 +25,7 @@ func (s *ClientDBTestSuite) SetupSuite() {
 
 func (s *ClientDBTestSuite) TearDownSuite() {
 	defer s.db.Close()
+
 	s.db.Exec("DROP TABLE clients")
 }
 
@@ -40,6 +41,7 @@ func (s *ClientDBTestSuite) TestSave() {
 	}
 
 	err := s.clientDB.Save(client)
+
 	s.Nil(err)
 }
 
